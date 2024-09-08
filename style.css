@@ -1,0 +1,191 @@
+.input {
+    width: 100%; /* Đặt chiều rộng của input chiếm toàn bộ chiều rộng phần tử chứa */
+    max-width: 270px; /* Giới hạn chiều rộng tối đa của input là 270px */
+    height: 60px; /* Đặt chiều cao của input là 60px */
+    padding: 12px; /* Thêm khoảng cách bên trong (padding) 12px xung quanh nội dung input */
+    font-size: 18px; /* Đặt kích thước font chữ là 18px */
+    font-family: "Courier New", monospace; /* Chọn font chữ là "Courier New", nếu không có thì dùng monospace */
+    color: #000; /* Đặt màu chữ là màu đen */
+    background-color: #fff; /* Đặt màu nền của input là màu trắng */
+    border: 4px solid #000; /* Đặt đường viền dày 4px, màu đen xung quanh input */
+    border-radius: 0; /* Đặt đường viền không có bo tròn góc */
+    outline: none; /* Loại bỏ đường viền outline mặc định khi input được focus */
+    transition: all 0.3s ease; /* Tạo hiệu ứng chuyển đổi mượt mà khi có sự thay đổi trạng thái với thời gian 0.3s */
+    box-shadow: 8px 8px 0 #000; /* Tạo đổ bóng cho input với khoảng cách 8px theo cả trục X và Y, màu đen */
+  }
+  
+  .input::placeholder {
+    color: #888; /* Đặt màu của placeholder (nội dung mặc định trong input) là màu xám nhạt */
+  }
+  
+  .input:hover {
+    transform: translate(-4px, -4px); /* Khi hover, di chuyển input lên trên trái 4px trên cả trục X và Y */
+    box-shadow: 12px 12px 0 #000; /* Tăng kích thước bóng đổ khi hover, làm cho hiệu ứng bóng sâu hơn */
+  }
+  
+  .input:focus {
+    background-color: #000; /* Khi input được focus, đổi màu nền thành màu đen */
+    color: #fff; /* Đổi màu chữ thành màu trắng khi focus */
+    border-color: #ffffff; /* Đổi màu đường viền thành màu trắng khi focus */
+  }
+  
+  .input:focus::placeholder {
+    color: #fff; /* Đổi màu placeholder thành màu trắng khi input được focus */
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0; /* Bắt đầu với chiều rộng là 0 */
+    }
+    to {
+      width: 100%; /* Kết thúc với chiều rộng là 100% */
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent; /* Tại 50% của animation, đổi màu viền thành trong suốt để tạo hiệu ứng nhấp nháy */
+    }
+  }
+  
+  .input:focus::after {
+    content: "|"; /* Thêm một ký tự dạng caret (dấu "|") */
+    position: absolute; /* Định vị tuyệt đối để caret có thể nằm chính xác ở vị trí mong muốn */
+    right: 10px; /* Đặt caret cách bên phải 10px */
+    animation: blink 0.7s step-end infinite; /* Áp dụng animation blink với thời gian 0.7s, dừng khi kết thúc mỗi bước, và lặp lại vô hạn */
+  }
+  
+  .input:valid {
+    animation: typing 2s steps(30, end); /* Khi input hợp lệ, áp dụng animation typing với thời gian 2s, chia thành 30 bước, dừng khi kết thúc */
+  }
+  
+  .input-container {
+    position: relative; /* Định vị tương đối để các phần tử bên trong có thể định vị tương đối với container */
+    width: 100%; /* Đặt chiều rộng container chiếm toàn bộ chiều rộng phần tử chứa */
+    max-width: 270px; /* Giới hạn chiều rộng tối đa của container là 270px */
+  }
+  
+  .input {
+    width: 100%; /* Chiều rộng input chiếm toàn bộ chiều rộng container */
+    height: 60px; /* Chiều cao của input là 60px */
+    padding: 12px; /* Thêm padding 12px xung quanh nội dung của input */
+    font-size: 18px; /* Kích thước font chữ là 18px */
+    font-family: "Courier New", monospace; /* Chọn font chữ "Courier New", nếu không có thì dùng monospace */
+    color: #000; /* Màu chữ là màu đen */
+    background-color: #fff; /* Màu nền là màu trắng */
+    border: 4px solid #000; /* Đường viền dày 4px, màu đen xung quanh input */
+    border-radius: 0; /* Đường viền không có bo tròn góc */
+    outline: none; /* Loại bỏ đường viền outline mặc định khi input được focus */
+    transition: all 0.3s ease; /* Tạo hiệu ứng chuyển đổi mượt mà khi có sự thay đổi trạng thái với thời gian 0.3s */
+    box-shadow: 8px 8px 0 #000; /* Tạo đổ bóng cho input với khoảng cách 8px theo cả trục X và Y, màu đen */
+  }
+  
+  .input::placeholder {
+    color: #888; /* Màu của placeholder (nội dung mặc định trong input) là màu xám nhạt */
+  }
+  
+  .input:hover {
+    transform: translate(-4px, -4px); /* Khi hover, di chuyển input lên trên trái 4px trên cả trục X và Y */
+    box-shadow: 12px 12px 0 #000; /* Tăng kích thước bóng đổ khi hover, làm cho hiệu ứng bóng sâu hơn */
+  }
+  
+  .input:focus {
+    background-color: #010101; /* Khi input được focus, đổi màu nền thành màu đen */
+    color: #fff; /* Đổi màu chữ thành màu trắng khi focus */
+    border-color: #d6d9dd; /* Đổi màu đường viền thành màu xám nhạt khi focus */
+  }
+  
+  .input:focus::placeholder {
+    color: #fff; /* Đổi màu placeholder thành màu trắng khi input được focus */
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: translateX(0); /* Bắt đầu từ vị trí gốc (không di chuyển) */
+    }
+    25% {
+      transform: translateX(-5px) rotate(-5deg); /* Dịch chuyển sang trái 5px và xoay -5 độ */
+    }
+    50% {
+      transform: translateX(5px) rotate(5deg); /* Dịch chuyển sang phải 5px và xoay 5 độ */
+    }
+    75% {
+      transform: translateX(-5px) rotate(-5deg); /* Dịch chuyển sang trái 5px và xoay -5 độ */
+    }
+    100% {
+      transform: translateX(0); /* Quay về vị trí gốc (không di chuyển) */
+    }
+  }
+  
+  .input:focus {
+    animation: shake 0.5s ease-in-out; /* Khi input được focus, áp dụng animation shake với thời gian 0.5s, làm mượt theo cách ease-in-out */
+  }
+  
+  @keyframes glitch {
+    0% {
+      transform: none; /* Không có thay đổi ở bước đầu tiên */
+      opacity: 1; /* Độ trong suốt 100% */
+    }
+    7% {
+      transform: skew(-0.5deg, -0.9deg); /* Nghiêng phần tử một chút */
+      opacity: 0.75; /* Độ trong suốt giảm xuống 75% */
+    }
+    10% {
+      transform: none; /* Không có thay đổi */
+      opacity: 1; /* Độ trong suốt quay lại 100% */
+    }
+    27%, 52%, 72%, 100% {
+      transform: none; /* Không có thay đổi */
+      opacity: 1; /* Độ trong suốt 100% */
+    }
+    30% {
+      transform: skew(0.8deg, -0.1deg); /* Nghiêng phần tử một chút */
+      opacity: 0.75; /* Độ trong suốt giảm xuống 75% */
+    }
+    35% {
+      transform: none; /* Không có thay đổi */
+      opacity: 1; /* Độ trong suốt quay lại 100% */
+    }
+    55% {
+      transform: skew(-1deg, 0.2deg); /* Nghiêng phần tử một chút */
+      opacity: 0.75; /* Độ trong suốt giảm xuống 75% */
+    }
+    75% {
+      transform: skew(0.4deg, 1deg); /* Nghiêng phần tử một chút */
+      opacity: 0.75; /* Độ trong suốt giảm xuống 75% */
+    }
+    80% {
+      transform: none; /* Không có thay đổi */
+      opacity: 1; /* Độ trong suốt quay lại 100% */
+    }
+  }
+  
+  .input:not(:placeholder-shown) {
+    animation: glitch 1s linear infinite; /* Áp dụng animation glitch khi input có giá trị, lặp lại vô hạn */
+  }
+  
+  .input-container::after {
+    content: "|"; /* Thêm một ký tự caret (dấu "|") */
+    position: absolute; /* Định vị tuyệt đối để caret có thể nằm chính xác ở vị trí mong muốn */
+    right: 10px; /* Đặt caret cách bên phải 10px */
+    top: 50%; /* Đặt caret tại vị trí giữa theo chiều dọc của container */
+    transform: translateY(-50%); /* Điều chỉnh caret chính xác ở giữa chiều cao container */
+    color: #000; /* Màu của caret là màu đen */
+    animation: blink 0.7s step-end infinite; /* Áp dụng animation blink với thời gian 0.7s, dừng khi kết thúc mỗi bước, và lặp lại vô hạn */
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0; /* Tại 50% của animation, làm caret mờ đi */
+    }
+  }
+  
+  .input:focus + .input-container::after {
+    color: #fff; /* Khi input được focus, đổi màu caret thành màu trắng */
+  }
+  
+  .input:not(:placeholder-shown) {
+    font-weight: bold; /* Khi input có giá trị, đổi font chữ thành in đậm */
+    letter-spacing: 1px; /* Tăng khoảng cách giữa các chữ cái lên 1px */
+    text-shadow: 0px 0px 0 #000; /* Không có bóng chữ, có thể để tạo không gian cho các hiệu ứng sau */
+  }
